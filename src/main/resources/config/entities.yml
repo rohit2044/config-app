@@ -1,0 +1,50 @@
+- name: user
+  tableName: users
+  fields:
+    - name: id
+      type: integer
+      isPrimaryKey: true
+      isNullable: false
+    - name: username
+      type: string
+      isPrimaryKey: false
+      isNullable: false
+    - name: email
+      type: string
+      isPrimaryKey: false
+      isNullable: false
+    - name: created_at
+      type: datetime]
+      isPrimaryKey: false
+      isNullable: true
+      defaultValue: CURRENT_TIMESTAMP
+  queries:
+    findByUsername: "SELECT * FROM ${table} WHERE username = :username"
+    findByEmail: "SELECT * FROM ${table} WHERE email = :email"
+
+- name: product
+  tableName: products
+  fields:
+    - name: id
+      type: integer
+      isPrimaryKey: true
+      isNullable: false
+    - name: name
+      type: string
+      isPrimaryKey: false
+      isNullable: false
+    - name: price
+      type: double
+      isPrimaryKey: false
+      isNullable: false
+    - name: description
+      type: text
+      isPrimaryKey: false
+      isNullable: true
+    - name: category
+      type: string
+      isPrimaryKey: false
+      isNullable: true
+  queries:
+    findByCategory: "SELECT * FROM ${table} WHERE category = :category"
+    findByPriceRange: "SELECT * FROM ${table} WHERE price BETWEEN :minPrice AND :maxPrice"

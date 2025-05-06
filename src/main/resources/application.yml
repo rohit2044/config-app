@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: config-app
+  datasource:
+    url: jdbc:sqlite:memory:configdb
+    driver-class-name: org.sqlite.JDBC
+
+server:
+  port: 8080
