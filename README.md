@@ -1,2 +1,2 @@
 # config-app
-Config drive java application
+Config driven java application
